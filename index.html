@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joe Canganelli | Technical Leader & Sales Engineer</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #1d4ed8;
+      --accent-2: #0f172a;
+      --line: #dbe1ea;
+      --soft: #eef4ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Verdana, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #f6f7fb 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: none;
+      margin: 0;
+      padding: 0 0 56px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #eef4ff 100%);
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 34px 40px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .eyebrow {
+      display: block;
+      width: 100%;
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid #c8d8ff;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      font-size: 1.14rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 18px;
+    }
+
+    .hook {
+      margin: 0 0 22px;
+      font-size: 1rem;
+      color: var(--accent-2);
+      background: rgba(255,255,255,0.75);
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      border-radius: 10px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 10px 20px rgba(29, 78, 216, 0.18);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--accent-2);
+      border-color: var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card {
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1.4rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .resume-tile {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+
+    .resume-tile h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .resume-tile p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .mini-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mini-links a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 820px) {
+      .two-col { grid-template-columns: 1fr; }
+      .hero { padding: 24px; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Technical Solutions Leader | Sales Engineer | Customer Success</div>
+      <h1>Joe Canganelli</h1>
+      <p class="tagline">I help customers, teams, and complex technology work better together. My sweet spot is the messy middle where systems get complicated, customers need clarity, and somebody has to turn all of that into progress.</p>
+      <p class="hook"><strong>Quick hook:</strong> When systems break, customers get frustrated, or teams start talking past each other, I fix what’s broken now and next time, calm the frustration, and get everyone aligned, across teams, departments, or even companies.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/joecanganelli/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn btn-secondary" href="mailto:canganelli@gmail.com">Email</a>
+        <a class="btn btn-secondary" href="tel:17175216779">Call</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>About Me</h2>
+        <p class="lead">I’m an Army veteran and technical leader with a background that blends hands-on troubleshooting, customer communication, field operations, training, and cross-functional problem solving. I’ve supported distributed systems at scale, worked directly with customers under pressure, and built a reputation for making complicated things easier to understand and easier to fix.</p>
+        <div class="pill-row">
+          <span class="pill">Technical Leadership</span>
+          <span class="pill">Customer Education</span>
+          <span class="pill">Customer Success Mindset</span>
+          <span class="pill">Field Service Expertise</span>
+          <span class="pill">Troubleshooting at Scale</span>
+          <span class="pill">Team Building & Communication</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>What I Bring</h2>
+        <ul>
+          <li>I translate complex systems, engineering, and ideas into clear, useful, and understandable customer solutions.</li>
+          <li>I build trust quickly with customers, field teams, and internal stakeholders.</li>
+          <li>I excel when things get messy and bring structure, agility, and options to high-pressure situations.</li>
+          <li>I solve problems end-to-end instead of passing them around like a cursed office potato.</li>
+          <li>I identify patterns, improve processes, and help prevent repeat issues.</li>
+          <li>I bridge the gaps between technical detail, business reality, and customer implementation and adoption.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Why Hire Me</h2>
+        <ul>
+          <li>I reduce worry, confusion, and frustration for customers while increasing satisfaction and confidence.</li>
+          <li>I make technical conversations easy for non-technical people. We can’t all be geeks, and that’s okay.</li>
+          <li>I bring teams together and have the conversations where they already work, without fluff, so decisions actually get made.</li>
+          <li>I combine technical depth with empathy, patience, strong communication, and a bit of humility, a rare and valuable mix.</li>
+          <li>I’m the kind of person you can put in front of customers, internal teams, or a complex problem and trust it gets handled right, and we’ll have a little fun along the way.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Which JOE do you want to meet?</h2>
+        <p class="lead">Same Joe, different spotlight. Pick the version that fits the conversation.</p>
+        <div class="resume-grid">
+          <div class="resume-tile">
+            <h3>Joe, All-Around Awesome</h3>
+            <p>Clean, broad, and recruiter-friendly. Great for general roles, leadership tracks, and traditional employers.</p>
+            <div class="mini-links">
+              <a href="#general-straight">Open resume</a>
+            </div>
+          </div>
+          <div class="resume-tile">
+            <h3>Joe, Agent of Controlled Chaos</h3>
+            <p>A little more personality, a little more spark. Best for tech-forward companies and people who appreciate a human voice.</p>
+            <div class="mini-links">
+              <a href="#general-playful">Open resume</a>
+            </div>
+          </div>
+          <div class="resume-tile">
+            <h3>Joe the Sales Engineer</h3>
+            <p>Focused on customer conversations, solution selling, and translating technical complexity into confidence.</p>
+            <div class="mini-links">
+              <a href="#sales-engineer">Open resume</a>
+              <a href="#sales-engineer-alt">Alt version</a>
+            </div>
+          </div>
+          <div class="resume-tile">
+            <h3>CEO Joe</h3>
+            <p>Highlights scale, leadership, and operational impact for bigger-picture roles.</p>
+            <div class="mini-links">
+              <a href="#executive">Open resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Career Snapshot</h2>
+        <ul>
+          <li><strong>Fleetworthy:</strong> Technical Lead supporting large-scale distributed systems, field operations, escalations, and customer-impacting technical issues.</li>
+          <li><strong>Comcast:</strong> High-volume technical support team leader, problem solver, and customer de-escalation specialist in fast-moving environments. (Also surprisingly strong at Comcast Jeopardy trivia.)</li>
+          <li><strong>Best Buy / Geek Squad:</strong> Technical sales and consulting, customer education (often requiring patience, translation, and the occasional minor miracle), troubleshooting and repair, and helping people make smart technology decisions.</li>
+          <li><strong>United States Army:</strong> Veteran experience that strengthened leadership, accountability, and mission-first execution.</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="footer">If you made it this far, now you have to hire me. Sorry, I don’t make the rules.</p>
+  </div>
+</body>
+</html>
